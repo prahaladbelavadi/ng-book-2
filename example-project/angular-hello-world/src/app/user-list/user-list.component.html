@@ -3,6 +3,7 @@
 </p>
 
 <ul>
-  <li *ngFor="let name of names">Hello {{ name }}!</li>
-  <app-user-item></app-user-item>
+  <li *ngFor="let name of names">
+     <app-user-item [name]="name"></app-user-item>
+  </li>
 </ul>
