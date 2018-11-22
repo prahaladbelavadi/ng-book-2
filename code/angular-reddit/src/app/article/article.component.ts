@@ -1,29 +1,32 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Article } from './article.model'
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
+
 export class ArticleComponent implements OnInit {
 @HostBinding('attr.class') cssClass = 'row'
-votes: number
-title: string
-link: string
+article:Article;
+
   constructor() { 
-    this.title = 'Angular 2';
-    this.link = 'https://angular.io';
-    this.votes = 10;
+    this.article = new Article(
+      'Angular 2',
+      'http://amgular.io',
+      10
+    )
   }
 
-  voteUp(){
-    this.votes = this.votes+1
+  voteUp(): boolean{
+    this.article.votes = this.votes+1
     return false;
   }
 
-  voteDown(){
-    this.votes -= 1
+  voteDown(): boolean{
+    this.article.votes -= 1
     return false;
   }
 
