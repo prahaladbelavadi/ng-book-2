@@ -8,15 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
 products: Product[];
 
-constructor(){
+constructor() {
   this.products = [
-    new this.products(
+    new Product(
       'MYSHOES',
       'Black Running Shoes',
       '/assets/images/products/black-shoes.jpg',
       ['Men', 'Shoes', 'Running Shoes'],
-      109.99
-    ),
+      109.99),
       new Product(
         'NEATOJACKET',
         'Blue Jacket',
@@ -29,13 +28,10 @@ constructor(){
         '/assets/images/products/black-hat.jpg',
       ['Men', 'Accessories', 'Hats'],
         29.99)
-]
-  ]
-
-
-  productWasSelected(product: Product) void{
-    console.log('Product Clicked', product);  
-  }
+  ];
 }
 
+  productWasSelected(product: Product): void {
+    console.log('Product Clicked:', product);  
+  }
 }
